@@ -2,17 +2,9 @@
 #include <cstdlib>
 #include <time.h>
 
-roulette::roulette()
-{
-}
 
-int roulette::getValue()
+int roulette::play()
 {
-    // Providing a seed value
 	srand((unsigned) time(NULL));
     return rand() % MAX_NUMBER;
-}
-
-roulette::~roulette()
-{
 }

@@ -4,8 +4,6 @@ project(roulette VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-
-
 include_directories(
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/src
