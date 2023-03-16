@@ -9,6 +9,7 @@ private:
     const int MAX_NUMBER = 37;
 public:  
     int play();
+    roulette();
 };
 
 #endif

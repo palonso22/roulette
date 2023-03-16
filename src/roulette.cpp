@@ -4,7 +4,11 @@
 
 
 int roulette::play()
-{
-	srand((unsigned) time(NULL));
+{	
     return rand() % MAX_NUMBER;
+}
+
+roulette::roulette()
+{
+    srand((unsigned) time(NULL));
 }

@@ -9,17 +9,19 @@ class player
 {
 private:
     int _account = 0;
-    std::list<int> _list{1,2,3,4,5};
-    Simple _bet;
+    std::list<int>* _list;
+    int getBet();
+    Simple _simple;
     
     void restart();
 
 public:
-    player(/* args */);
+    player();
     void checkResult(bool result);
     bool checkCondiction();
-    void setBet(Simple bet);
-    Simple getBet();
+    void setSimple(Simple simple);
+    Simple getSimple();
+    int getAccount();
 };
 
 

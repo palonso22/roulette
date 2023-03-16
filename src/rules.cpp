@@ -9,14 +9,13 @@ bool rules::lookInRedNumbers(int val)
     return std::find(redNumbers.begin(), redNumbers.end(), val) != redNumbers.end();
 }
 
-bool rules::getResult(Simple bet, int result)
+bool rules::getResult(Simple simple, int result)
 {
-    std::cout << "the value is " << result;
     if (result == 0){
         return false;
     }
 
-    switch (bet)
+    switch (simple)
     {
     case RED:
         return lookInRedNumbers(result);
