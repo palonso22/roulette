@@ -23,7 +23,7 @@ private:
 public:
     player();
     void checkResult(bool result);
-    bool checkCondiction();
+    bool checkCondiction(int min, int max);
     void setNumber(Number number);
     Number getNumber();
     int getAccount();

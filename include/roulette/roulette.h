@@ -14,8 +14,13 @@ private:
     const int MAX_NUMBER = 37;
     static const int MAX_NUMBER_PLAYERS = 6;
     rules* _rules;
+    const int _minBet = 5;
+    const int _maxBet = 4000;
+
 public:  
-    void play(player* players[MAX_NUMBER_PLAYERS]);
+    void play(player* players[MAX_NUMBER_PLAYERS]);   
+    int getMinBet();
+    int getMaxBet();
     roulette(rules* rules);
 };
 

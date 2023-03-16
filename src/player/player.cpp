@@ -10,25 +10,23 @@ player::player()
     restart();
 }
 
-bool player::checkCondiction()
-{        
-    if (_list->empty()){
-        restart();
-    }    
-
+// Check if the player's bet met between the bounds
+bool player::checkCondiction(int min, int max)
+{           
     int bet = getBet();
-    if (bet < 5 || bet > 4000){
+    if (bet < min || bet > max){
         restart();
     }
     return true;
 }
 
+// Set list to initial state
 void player::restart()
 {
-    // Erase all elements
+    // Erase remaining elements.
     _list->clear();
 
-    // Fill the list with 1,2,3,4
+    // Fill the list with initial elements.
     for(int i = 1; i < 5; i++){
         _list->push_front(i);
     }
@@ -60,7 +58,7 @@ void player::checkResult(bool result)
             _list->pop_front();
         }      
 
-        // If there are no numbers in list, restart it.
+        // If not left numbers in list, restart it.
         if (_list->empty()){
             restart();
         }  
@@ -80,7 +78,7 @@ Number player::getNumber()
 int player::getBet()
 {
 
-    // With one element in the list, the bet is the only number.
+    // With one element in the list, the bet is the only number in it.
     if (_list->size() == 1){
         return _list->front();
     } else {
