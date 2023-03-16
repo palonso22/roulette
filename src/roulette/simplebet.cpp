@@ -1,21 +1,26 @@
-#include "rules.h"
+#include "roulette/simplebet.h"
+#include "roulette/number.h"
+
+
 #include <algorithm>
 #include <iostream>
 
-const std::vector<int> rules::redNumbers = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
+using namespace std;
 
-bool rules::lookInRedNumbers(int val)
+const vector<int> simplebet::redNumbers = {1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36};
+
+bool simplebet::lookInRedNumbers(int val)
 {
-    return std::find(redNumbers.begin(), redNumbers.end(), val) != redNumbers.end();
+    return find(redNumbers.begin(), redNumbers.end(), val) != redNumbers.end();
 }
 
-bool rules::getResult(Simple simple, int result)
+bool simplebet::getResult(Number number, int result)
 {
     if (result == 0){
         return false;
     }
 
-    switch (simple)
+    switch (number)
     {
     case RED:
         return lookInRedNumbers(result);

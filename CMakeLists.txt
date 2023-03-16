@@ -10,10 +10,11 @@ include_directories(
 )
 
 file(GLOB all_SRCS
-        "${PROJECT_SOURCE_DIR}/include/*.h"
-        "${PROJECT_SOURCE_DIR}/include/*.hpp"
-        "${PROJECT_SOURCE_DIR}/src/*.cpp"
-        "${PROJECT_SOURCE_DIR}/src/*.c"
+        "${PROJECT_SOURCE_DIR}/include/player/*.h"
+        "${PROJECT_SOURCE_DIR}/include/roulette/*.h"
+        "${PROJECT_SOURCE_DIR}/src/player/*.cpp"
+        "${PROJECT_SOURCE_DIR}/src/roulette/*.cpp"
+        "${PROJECT_SOURCE_DIR}/src/main.cpp"
         )
 
 

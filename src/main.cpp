@@ -1,38 +1,36 @@
 #include <iostream>
 
-#include "roulette.h"
-#include "bets.h"
-#include "player.h"
+#include "roulette/roulette.h"
+#include "roulette/number.h"
+#include "roulette/simplebet.h"
+#include "player/player.h"
 
-#define N 100000
+#define N 10000
 #define P 6
 
 using namespace std;
 
 int main() 
-{
-    int ctos = 10;
-    roulette r;
-    player players[P];
-    players[0].setSimple(RED);
-    players[1].setSimple(BLACK);
-    players[2].setSimple(PAIR);
-    players[3].setSimple(NONE);
-    players[4].setSimple(MAJOR);
-    players[5].setSimple(MINORS);
+{        
+    simplebet* rules = new simplebet();
+    roulette roulette(rules);
+    player* players[P];
+    for(int i = 0; i < P; i++){
+        players[i] = new player();        
+    }    
+    players[0]->setNumber(RED);
+    players[1]->setNumber(BLACK);
+    players[2]->setNumber(PAIR);
+    players[3]->setNumber(NONE);
+    players[4]->setNumber(MAJOR);
+    players[5]->setNumber(MINORS);
 
-    for(int i = 0; i < N; i++){
-        int val = r.play();
-        for(int j = 0; j < P; j++){
-            player* p = &players[j];
-            p->checkCondiction();        
-            Simple simple = p->getSimple();
-            p->checkResult(rules::getResult(simple, val));        
-        }
+    for(int i = 0; i < 100; i++){
+       roulette.play(players);
     }
 
     for(int j = 0; j < P; j++){
-        player* p = &players[j];
+        player* p = players[j];
         cout << "the account of player " << j << " is " << p->getAccount() << endl;
     }   
 }
