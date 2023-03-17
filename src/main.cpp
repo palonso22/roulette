@@ -5,7 +5,7 @@
 #include "roulette/simplebet.h"
 #include "player/player.h"
 
-#define N 10000
+#define N 1000000
 #define P 6
 
 using namespace std;
@@ -26,10 +26,10 @@ int main()
     
     players[0]->setNumber(RED); // Player A bets RED.
     players[1]->setNumber(BLACK); // Player B bets BLACK.
-    players[2]->setNumber(PAIR); // Player C bets PAIR.
-    players[3]->setNumber(ODD); // Player D bets ODD.
-    players[4]->setNumber(MAJOR); // Player E bets MAJOR.
-    players[5]->setNumber(MINOR); // Player F bets MINORS.
+    players[2]->setNumber(MAJOR); // Player C bets PAIR.
+    players[3]->setNumber(MINOR); // Player D bets ODD.
+    players[4]->setNumber(PAIR); // Player E bets MAJOR.
+    players[5]->setNumber(ODD); // Player F bets MINORS.
 
     for (int i = 0; i < N; i++){
        roulette.play(players);
