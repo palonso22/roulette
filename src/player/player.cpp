@@ -23,10 +23,10 @@ bool player::checkCondiction(int min, int max)
 // Set list to initial state
 void player::restart()
 {
-    // Erase remaining elements.
+    // Erase remaining numbers.
     _list->clear();
 
-    // Fill the list with initial elements.
+    // Fill the list with initial numbers.
     for(int i = 1; i < 5; i++){
         _list->push_front(i);
     }
@@ -34,6 +34,7 @@ void player::restart()
 
 void player::checkResult(bool result)
 {
+
     int profit = getBet();
          
     if (result){ // Player won.
@@ -46,7 +47,7 @@ void player::checkResult(bool result)
 
     } else{   // Player lost. 
 
-        // Discount profit of the account.
+        // Discount bet of the account.
         _account -= profit;
 
         // If the list contains at least 2 elements, delete first and last element in list.

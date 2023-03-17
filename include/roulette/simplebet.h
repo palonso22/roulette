@@ -15,7 +15,7 @@ private:
     static bool lookInRedNumbers(int val);
 
 public:
-    bool getResult(Number number, int result);
+    bool getResult(Number number, int val);
 };
 
 #endif

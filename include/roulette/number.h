@@ -4,7 +4,7 @@
 // Types of numbers in roulette game
 enum Number
 {
-    RED, BLACK, PAIR, NONE, MAJOR, MINORS
+    RED, BLACK, PAIR, ODD, MAJOR, MINOR
 };
 
 #endif

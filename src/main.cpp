@@ -12,6 +12,9 @@ using namespace std;
 
 char letters [] = {'A', 'B', 'C', 'D', 'E', 'F'};
 
+// Simulate 6 players playing the roulette game and print
+// the state of their account after playing 10000 times.
+
 int main() 
 {        
     simplebet* rules = new simplebet();
@@ -24,9 +27,9 @@ int main()
     players[0]->setNumber(RED); // Player A bets RED.
     players[1]->setNumber(BLACK); // Player B bets BLACK.
     players[2]->setNumber(PAIR); // Player C bets PAIR.
-    players[3]->setNumber(NONE); // Player D bets NONE.
+    players[3]->setNumber(ODD); // Player D bets ODD.
     players[4]->setNumber(MAJOR); // Player E bets MAJOR.
-    players[5]->setNumber(MINORS); // Player F bets MINORS.
+    players[5]->setNumber(MINOR); // Player F bets MINORS.
 
     for (int i = 0; i < N; i++){
        roulette.play(players);

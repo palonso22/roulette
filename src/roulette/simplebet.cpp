@@ -14,31 +14,34 @@ bool simplebet::lookInRedNumbers(int val)
     return find(redNumbers.begin(), redNumbers.end(), val) != redNumbers.end();
 }
 
-bool simplebet::getResult(Number number, int result)
+// Compute if the player wins or loses according to his bet and
+// choosen number by the roulette.    
+bool simplebet::getResult(Number number, int val)
 {
-    if (result == 0){
+    // If the val is 0, the player loses.
+    if (val == 0){
         return false;
     }
 
     switch (number)
     {
     case RED:
-        return lookInRedNumbers(result);
+        return lookInRedNumbers(val);
 
     case BLACK:
-        return !lookInRedNumbers(result);
+        return !lookInRedNumbers(val);
 
     case PAIR:
-        return result % 2 == 0;
+        return val % 2 == 0;
 
-    case NONE:
-        return result % 2 != 0;
+    case ODD:
+        return val % 2 != 0;
     
     case MAJOR:
-        return result > 16;
+        return val > 16;
     
-    case MINORS:
-        return result <= 16;
+    case MINOR:
+        return val <= 16;
 
     default:
         return false;
